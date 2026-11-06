@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01-minimal",
+    "path": "prompts/01-minimal.txt",
+    "words": 84,
+    "characters": 750
+  },
+  {
+    "id": "02-compact",
+    "path": "prompts/02-compact.txt",
+    "words": 217,
+    "characters": 1570
+  },
+  {
+    "id": "03-procedure",
+    "path": "prompts/03-procedure.txt",
+    "words": 448,
+    "characters": 2982
+  },
+  {
+    "id": "04-examples",
+    "path": "prompts/04-examples.txt",
+    "words": 526,
+    "characters": 3950
+  },
+  {
+    "id": "05-detailed",
+    "path": "prompts/05-detailed.txt",
+    "words": 1011,
+    "characters": 6639
+  }
+]
