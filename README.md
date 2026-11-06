@@ -2,7 +2,7 @@
 
 ## Status
 
-Repository initialized on 6 November 2026. Task A's assignment brief, original test cases, required labels, and output contract are pending. No model evaluations have run, and no accuracy results are claimed.
+Repository initialized on 6 November 2026. The assessment has been read; see `task-A/requirements.md` for the extraction contract and submission requirements. Task A is funding-news extraction, rather than general classification. No model evaluations have run, and no accuracy results are claimed. Secure API-key creation currently requires the OpenAI Platform connection to be reauthenticated.
 
 ## Layout
 
