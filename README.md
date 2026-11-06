@@ -19,7 +19,16 @@ Repository initialized on 6 November 2026. The assessment has been read; see `ta
 - `task-A/invalid-response-policy.md` and `task-A/production-notes.md`: operational guidance and sourced discussion of classifiers and LLM validation.
 - `task-A/results/README.md`: honest evaluation status; no live output has been generated.
 
-Offline evaluator checks passed: `python3 -m unittest discover -s task-A/tests -v` (10 tests). These are tests of the evaluator, not prompt performance.
+Offline checks passed: `python3 -m unittest discover -s task-A/tests -v` (12 tests). These check the evaluator and runner with synthetic responses, not prompt performance. Synthetic response files exist only in temporary test directories and are removed automatically.
+
+The runner and Markdown report generator are ready. After secure key setup is restored, run:
+
+```sh
+python3 task-A/run_evaluation.py --run-id comparison-01
+python3 task-A/report_results.py comparison-01
+```
+
+Default planned model: `gpt-4.1-mini-2025-04-14`, temperature 0, no constrained JSON mode, three repeats per case for each prompt (195 calls). This is a planned setting, not a claim of completed execution. The runner stores the complete request without authorization headers, raw response body, exact assistant output and model metadata. It never repairs or overwrites saved answers. Input hashes prevent mixing revised prompts/tests with an existing run. All live testing, final prompt selection, semantic quote review, the twelve-output submission and final failure notes remain pending API access.
 
 ## Evaluation plan
 
