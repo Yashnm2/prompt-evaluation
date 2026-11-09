@@ -1,0 +1,19 @@
+date,company,sector,round,amount,currency,amount_usd,input_rows,reported_dates,sources
+2026-07-03,Kirana Fleet,Logistics,Series A,12000000,USD,12000000.00,3; 4,2026-07-03; 2026-07-04,TechWire; AsiaDeals
+2026-07-09,MediNest,Healthtech,Seed,2000000,USD,2000000.00,5,2026-07-09,AsiaDeals
+2026-07-15,PayLoom,Fintech,Series B,18000000,USD,18000000.00,6; 7,2026-07-15; 2026-07-15,TechWire; Press release
+2026-07-22,AgroSense,Agritech,Seed,40000000,INR,480000.00,8,2026-07-22,AsiaDeals
+2026-07-30,WasteWise,Climate,Pre-seed,600000,USD,600000.00,9,2026-07-30,TechWire
+2026-08-05,LedgerLeaf,Fintech,Seed,2500000,USD,2500000.00,10,2026-08-05,Press release
+2026-08-08,SolarSprout,Climate,Series A,10000000,USD,10000000.00,11,2026-08-08,AsiaDeals
+2026-08-12,Portline,Logistics,Series B,25000000,SGD,19250000.00,12,2026-08-12,TechWire
+2026-08-18,CareGrid,Healthtech,Series B,30000000,USD,30000000.00,13,2026-08-18,TechWire
+2026-08-20,RouteNine,Logistics,Pre-seed,800000,USD,800000.00,14,2026-08-20,AsiaDeals
+2026-08-30,CropIQ,Agritech,Seed,3000000,USD,3000000.00,15,2026-08-30,TechWire
+2026-09-02,HaulHub,Logistics,Seed,3500000,USD,3500000.00,16,2026-09-02,AsiaDeals
+2026-09-03,VitaLab,Healthtech,Series A,7000000,SGD,5390000.00,17,2026-09-03,Press release
+2026-09-10,Kopi Pay,Fintech,Series A,11000000,SGD,8470000.00,18,2026-09-10,AsiaDeals
+2026-09-14,SoilSense,Agritech,Series A,150000000,INR,1800000.00,19,2026-09-14,TechWire
+2026-09-18,Dockside,Logistics,Series A,9000000,USD,9000000.00,20,18/09/2026,TechWire
+2026-09-21,GridCool,Climate,Seed,4000000,SGD,3080000.00,21,2026-09-21,AsiaDeals
+2026-09-25,ClearCap,Fintech,Pre-seed,1200000,USD,1200000.00,22,2026-09-25,TechWire

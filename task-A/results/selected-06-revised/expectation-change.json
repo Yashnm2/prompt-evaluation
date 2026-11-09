@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-08",
+  "case_id": "extra-10",
+  "company": "StackFern",
+  "field": "sector",
+  "original": "robotics",
+  "required": "warehouse robotics",
+  "reason": "User requested the specific sector explicitly stated in the article. This is a post-run expectation change; no model call or raw output was changed.",
+  "original_cases_sha256": "77346f949cc19b60cf95b815ece585a589feaa9bb1344836d2f93e7265bc5fc8",
+  "current_cases_sha256": "49e33676247f081023bb0fb3ba06c74f27052d74372176e88389867f720795d0",
+  "raw_record_sha256": {
+    "06-handwritten__extra-10__1.json": "48ffec194a64d38c2bec531f0a64417567d8c6273126298f8bf100337ffb481f",
+    "06-handwritten__extra-10__2.json": "a12b47b713402a7d267e99c516b50afb6e6eaf76e22636ea41d3d71c80e41416",
+    "06-handwritten__extra-10__3.json": "0bd10763f099793e74c6f9c07c4103bb2cf954d1db22bf80f3bdedc2c5d3397c",
+    "06-handwritten__given-01__1.json": "14665dbe5f9e4f7aa64ea99571939b7473cd7232fa67dca2c8ab59e70aaac0cc",
+    "06-handwritten__given-01__2.json": "ebe25746e3e8174186a1d0b3cfbeb94a6ac1f7ccfda7a13e2cf683019409ff7c",
+    "06-handwritten__given-01__3.json": "0a931a47678696ca99fb7eea94d34fe7be967d290647dcd1f1d94bed8897503b",
+    "06-handwritten__given-02__1.json": "eca88180984b95f73940413c3e55bee0d5aee9eabc040955ad9ab6ca5c4c2d8b",
+    "06-handwritten__given-02__2.json": "e3a75fe384220e42a1ac95a7be3947e3308b2cdeee6e8a226568afd4652f82d7",
+    "06-handwritten__given-02__3.json": "5fef38e27aedc0c9b1514121b9fd90149292bbd420af8c7af9a8b183cf67cf0e",
+    "06-handwritten__given-03__1.json": "3b87f79e94f052f682a32dc62e01f69ce932ca82906e7f7d42ae04fb1a37934b",
+    "06-handwritten__given-03__2.json": "fec879521cbf7bf9d64c6c5a6d5b2329bc28ecd359ccc5b0bfe6ffc35e917f82",
+    "06-handwritten__given-03__3.json": "113bc79ee8abf30406632614bd0ed782392fa44c3b85263ff0bb4e41f92f5e5b"
+  }
+}

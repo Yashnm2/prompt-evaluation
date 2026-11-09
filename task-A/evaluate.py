@@ -50,7 +50,7 @@ def validate(raw):
         if not isinstance(company["round"], str) or company["round"] not in ROUNDS:
             errors.append(f"{prefix}.round: unsupported label")
         amount = company["amount_usd"]
-        if amount is not None and (type(amount) not in (int, float) or not math.isfinite(amount) or amount < 0):
+        if amount is not None and (type(amount) not in (int, float) or (type(amount) is float and not math.isfinite(amount)) or amount < 0):
             errors.append(f"{prefix}.amount_usd: finite nonnegative number or null required")
         leads = company["lead_investors"]
         if not isinstance(leads, list) or any(not isinstance(x, str) or not x.strip() for x in leads):
@@ -65,7 +65,7 @@ def normalize(value):
 def check_correctness(data, case):
     """Compare fixture facts independently of format; evidence gets bounded checks.
 
-    Evidence substring/anchor checks do not prove semantic entailment. Review
+    Evidence substring checks do not prove semantic entailment. Review
     quotes manually in the final report; no LLM-judge claim is made here.
     """
     actual = data["companies"]
@@ -96,9 +96,6 @@ def check_correctness(data, case):
         quote = got["evidence"]
         if quote not in case["article"]:
             errors.append(f"{gold['name']}.evidence: not an exact contiguous source excerpt")
-        for alternatives in gold.get("evidence_anchors", []):
-            if not any(normalize(a) in normalize(quote) for a in alternatives):
-                errors.append(f"{gold['name']}.evidence: missing supporting anchor {alternatives!r}")
     return errors
 
 

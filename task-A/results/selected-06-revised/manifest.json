@@ -1,0 +1,24 @@
+{
+  "model": "gpt-4.1-2025-04-14",
+  "temperature": 0,
+  "max_completion_tokens": 2500,
+  "workers": 2,
+  "min_interval": 6.5,
+  "repetitions": 3,
+  "planned_requests": 12,
+  "prompt_hashes": {
+    "06-handwritten": "c5e20d066ad177358434e58e624aa60d6b89d72862041ca6b304a2c22391e66b"
+  },
+  "cases_hash": "77346f949cc19b60cf95b815ece585a589feaa9bb1344836d2f93e7265bc5fc8",
+  "evaluator_hash": "8ff11770c5fd51822213d358c793c344d71e6942dbb0b385d3ff0edde9f95b97",
+  "template_hash": "5769c936ff55ce523580e67c901cb7deec5e1d88052ef931a1f9590bffb1e866",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "structured_output_mode": false,
+  "automatic_retries": 0,
+  "case_ids": [
+    "given-01",
+    "given-02",
+    "given-03",
+    "extra-10"
+  ]
+}

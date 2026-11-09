@@ -60,6 +60,49 @@ class ValidatorTests(unittest.TestCase):
             companies = [dict(c, evidence=case['article']) for c in case['expected_companies']]
             self.assertTrue(grade(json.dumps({'companies': companies}), case)['correct'], case['id'])
 
+    def test_rejects_headquarters_inferred_from_landmark(self):
+        case = next(c for c in load_cases() if c['category'] == 'landmark-clue')
+        company = dict(case['expected_companies'][0], evidence=case['article'], hq_country='Singapore')
+        result = grade(json.dumps({'companies': [company]}), case)
+        self.assertTrue(result['valid'])
+        self.assertFalse(result['correct'])
+        self.assertTrue(any('hq_country' in e for e in result['correctness_errors']))
+
+    def test_rejects_invented_name_for_anonymous_recipient(self):
+        case = next(c for c in load_cases() if c['category'] == 'unnamed-only')
+        company = dict(self.company, name='Unnamed startup', evidence=case['article'])
+        result = grade(json.dumps({'companies': [company]}), case)
+        self.assertTrue(result['valid'])
+        self.assertFalse(result['correct'])
+
+    def test_rejects_facts_swapped_between_recipients(self):
+        case = next(c for c in load_cases() if c['category'] == 'clean-multiple')
+        companies = [dict(c, evidence=case['article']) for c in case['expected_companies']]
+        companies[0]['amount_usd'], companies[1]['amount_usd'] = companies[1]['amount_usd'], companies[0]['amount_usd']
+        result = grade(json.dumps({'companies': companies}), case)
+        self.assertTrue(result['valid'])
+        self.assertFalse(result['correct'])
+
+    def test_specific_warehouse_sector_is_required_only_when_stated(self):
+        case = next(c for c in load_cases() if c['id'] == 'extra-10')
+        companies = [dict(c, evidence=case['article']) for c in case['expected_companies']]
+        self.assertTrue(grade(json.dumps({'companies': companies}), case)['correct'])
+        companies[0]['sector'] = 'robotics'
+        result = grade(json.dumps({'companies': companies}), case)
+        self.assertFalse(result['correct'])
+        self.assertTrue(any('sector' in e for e in result['correctness_errors']))
+
+    def test_large_integer_amount_does_not_crash_validator(self):
+        self.assertTrue(grade(self.raw(amount_usd=10**400), self.case)['valid'])
+
+    def test_all_twelve_saved_answers_pass_revised_expectations(self):
+        cases = {c['id']: c for c in load_cases()}
+        paths = list((Path(__file__).resolve().parents[1] / 'results/selected-06-revised').glob('*__*__*.json'))
+        self.assertEqual(len(paths), 12)
+        for path in paths:
+            record = json.loads(path.read_text())
+            self.assertTrue(grade(record['raw_output'], cases[record['case_id']])['correct'], path.name)
+
 
 if __name__ == '__main__':
     unittest.main()
